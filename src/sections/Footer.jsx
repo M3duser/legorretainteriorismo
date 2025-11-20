@@ -18,29 +18,36 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* RIGHT SIDE — LINKS */}
+        {/* RIGHT SIDE — SOCIAL + BACK TO TOP */}
         <div className="flex flex-col md:items-end gap-6">
 
-          <nav className="flex gap-8 text-[0.7rem] tracking-[0.2em] uppercase font-medium text-neutral-700">
-            <a href="#philosophy" className="hover:text-neutral-400 transition-colors">
-              Philosophy
-            </a>
-            <a href="#services" className="hover:text-neutral-400 transition-colors">
-              Services
-            </a>
-            <a href="#work" className="hover:text-neutral-400 transition-colors">
-              Work
-            </a>
-            <a href="#contact" className="hover:text-neutral-400 transition-colors">
-              Contact
-            </a>
-          </nav>
-
+          {/* SOCIAL LINKS */}
           <div className="flex gap-8 text-[0.7rem] tracking-[0.2em] uppercase font-medium text-neutral-700">
-            <a href="#" className="hover:text-neutral-400 transition-colors">Instagram</a>
-            <a href="#" className="hover:text-neutral-400 transition-colors">Pinterest</a>
-            <a href="#" className="hover:text-neutral-400 transition-colors">Behance</a>
+            <a
+              href="https://www.instagram.com/legorretainteriorismo/?hl=en"
+              target="_blank"
+              className="hover:text-neutral-400 transition-colors"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="https://mx.pinterest.com/legorretainteriorismo/"
+              target="_blank"
+              className="hover:text-neutral-400 transition-colors"
+            >
+              Pinterest
+            </a>
           </div>
+
+          {/* BACK TO TOP */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="text-[0.7rem] tracking-[0.2em] uppercase font-medium text-neutral-700 hover:text-neutral-400 transition-colors flex items-center gap-2"
+          >
+            Back to top
+            <span className="text-lg">↑</span>
+          </button>
 
         </div>
 

@@ -5,29 +5,48 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
+  const links = [
+    { label: "Philosophy", href: "#philosophy" },
+    { label: "Team", href: "#team" },
+    { label: "Services", href: "#services" },
+    { label: "Work", href: "#work" },
+    { label: "FAQ", href: "#faq" },
+    { label: "Contact", href: "#contact" },
+  ];
+
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-50 px-6 md:px-12 py-5 flex justify-between items-center">
-        
+      <header
+        className="
+          fixed top-0 left-0 w-full z-50
+          px-6 md:px-12 py-4
+          flex justify-between items-center
+          backdrop-blur-xl
+          bg-white/40
+          border-b border-white/20
+          shadow-sm
+        "
+      >
         {/* LOGO */}
-        <h1 className="font-serif text-lg tracking-wide text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
+        <h1 className="font-serif text-lg tracking-wide text-neutral-900">
           LEGORRETA.
         </h1>
 
         {/* MOBILE BTN */}
-        <button 
-          className="md:hidden text-white"
+        <button
+          className="md:hidden text-neutral-900"
           onClick={() => setOpen(true)}
         >
           <Menu className="w-6 h-6" />
         </button>
 
         {/* DESKTOP NAV */}
-        <nav className="hidden md:flex gap-10 text-xs uppercase tracking-[0.2em] text-white drop-shadow-[0_1px_3px_rgba(0,0,0,0.5)]">
-          <a href="#philosophy" className="hover:opacity-70">Philosophy</a>
-          <a href="#services" className="hover:opacity-70">Services</a>
-          <a href="#work" className="hover:opacity-70">Work</a>
-          <a href="#contact" className="hover:opacity-70">Contact</a>
+        <nav className="hidden md:flex gap-10 text-xs uppercase tracking-[0.2em] text-neutral-900">
+          {links.map((item) => (
+            <a key={item.label} href={item.href} className="hover:opacity-60">
+              {item.label}
+            </a>
+          ))}
         </nav>
       </header>
 
@@ -38,23 +57,23 @@ export default function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-[#111] z-50 flex flex-col justify-center items-center text-white"
+            className="fixed inset-0 bg-white/90 backdrop-blur-xl z-50 flex flex-col justify-center items-center text-neutral-900"
           >
-            <button 
+            <button
               className="absolute top-6 right-6"
               onClick={() => setOpen(false)}
             >
               <X className="w-8 h-8" />
             </button>
 
-            {["Philosophy", "Services", "Work", "Contact"].map(item => (
+            {links.map((item) => (
               <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-4xl font-serif mb-8 hover:text-neutral-400"
+                key={item.label}
+                href={item.href}
+                className="text-4xl font-serif mb-8 hover:text-neutral-500"
                 onClick={() => setOpen(false)}
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </motion.div>
