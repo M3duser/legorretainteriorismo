@@ -37,7 +37,7 @@ export default function Philosophy() {
           <Reveal>
             <div className="aspect-[4/5] overflow-hidden bg-neutral-200">
               <img
-                src="public\legorreta.jpg?q=80&w=2000&auto=format&fit=crop"
+                src="legorreta.jpg?q=80&w=2000&auto=format&fit=crop"
                 alt="Interior textures and warm materials"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-[1.5s] ease-out"
               />

@@ -7,7 +7,7 @@ export default function Hero() {
       {/* BACKGROUND */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="public\img\HORIZONTAL.jpg"
+          src="/img/HORIZONTAL.jpg"
           className="w-full h-full object-cover brightness-[0.9]"
         />
 
