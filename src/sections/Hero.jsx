@@ -7,7 +7,7 @@ export default function Hero() {
       {/* BACKGROUND */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="https://www.kellywearstler.com/on/demandware.static/-/Sites-KellyWearstler-Library/default/v1762997425997/images/02_Interiors/detail_pages/residences/malibu_pch/Block3IMG.jpg"
+          src="public\img\HORIZONTAL.jpg"
           className="w-full h-full object-cover brightness-[0.9]"
         />
 
