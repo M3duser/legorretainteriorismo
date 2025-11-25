@@ -8,6 +8,7 @@ import Testimonials from "./sections/Testimonials";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 import FAQ from "./sections/FAQ";
+import InstagramSection from "./sections/Instagram";
 
 
 
@@ -22,6 +23,7 @@ export default function App() {
       <Work />
       <Testimonials />
       <FAQ />  
+        <InstagramSection />
       <Contact />
       <Footer />
     </>
