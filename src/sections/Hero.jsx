@@ -7,8 +7,8 @@ export default function Hero() {
       {/* BACKGROUND */}
       <div className="absolute inset-0 -z-10">
         <img
-          src="/img/HORIZONTAL.jpg"
-          className="w-full h-full object-cover brightness-[0.9]"
+          src="/img/KITCHEN-2.png"
+          className="w-full h-full object-cover object-top brightness-[0.9]"
         />
 
         {/* Bottom fade */}
