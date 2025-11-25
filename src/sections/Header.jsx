@@ -32,6 +32,42 @@ export default function Header() {
           LEGORRETA.
         </h1>
 
+        {/* DESKTOP NAV + IG ICON */}
+        <div className="hidden md:flex items-center gap-8">
+          <nav className="flex gap-10 text-xs uppercase tracking-[0.2em] text-neutral-900">
+            {links.map((item) => (
+              <a key={item.label} href={item.href} className="hover:opacity-60">
+                {item.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* INSTAGRAM ICON */}
+          <a
+            href="https://www.instagram.com/legorretainteriorismo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-60 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-neutral-900"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+        </div>
+
         {/* MOBILE BTN */}
         <button
           className="md:hidden text-neutral-900"
@@ -39,15 +75,6 @@ export default function Header() {
         >
           <Menu className="w-6 h-6" />
         </button>
-
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex gap-10 text-xs uppercase tracking-[0.2em] text-neutral-900">
-          {links.map((item) => (
-            <a key={item.label} href={item.href} className="hover:opacity-60">
-              {item.label}
-            </a>
-          ))}
-        </nav>
       </header>
 
       {/* MOBILE MENU */}
@@ -76,6 +103,31 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
+
+            {/* IG in mobile menu */}
+            <a
+              href="https://www.instagram.com/legorretainteriorismo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-10 hover:opacity-60"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-neutral-900"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>
