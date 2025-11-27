@@ -7,7 +7,7 @@ export default function Contact() {
   const [modalOpen, setModalOpen] = useState(false);
   const [submittedData, setSubmittedData] = useState(null);
 
-  // ---- Reveal Animation ----
+  // ---- Reveal ----
   const Reveal = ({ children, delay = 0 }) => (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -20,7 +20,7 @@ export default function Contact() {
   );
 
   // ---- Input Group ----
-  const InputGroup = ({ label, placeholder, type = "text", isTextArea = false, name }) => (
+  const InputGroup = ({ label, placeholder, type = "text", isTextArea = false, name, showHelper }) => (
     <Reveal>
       <div className="flex flex-col gap-3">
         <label className="text-xs uppercase tracking-[0.25em] text-neutral-500">
@@ -42,11 +42,17 @@ export default function Contact() {
             type={type}
             placeholder={placeholder}
             name={name}
-            required={label !== "Estimated Budget (optional)"}
+            required={false} // budget is optional
             className="w-full bg-transparent border-b border-neutral-300 py-3 text-lg font-serif 
                        text-neutral-900 placeholder:text-neutral-400 
                        focus:outline-none focus:border-neutral-900 transition-colors"
           />
+        )}
+
+        {showHelper && (
+          <p className="text-xs text-neutral-500 opacity-70 leading-relaxed">
+            Optional but recommended. Sharing your approximate budget helps us tailor the perfect proposal.
+          </p>
         )}
       </div>
     </Reveal>
@@ -66,10 +72,9 @@ export default function Contact() {
     </button>
   );
 
-  // ---- Handle Submit ----
+  // ---- Submit Handler ----
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const form = e.target;
 
     const data = {
@@ -98,7 +103,7 @@ export default function Contact() {
     <section id="contact" className="py-24 md:py-32 px-6 md:px-12 bg-[#F3F0EA]">
       <div className="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20">
 
-        {/* LEFT SIDE — TEXT */}
+        {/* LEFT SIDE */}
         <div>
           <Reveal>
             <span className="text-xs tracking-widest uppercase text-neutral-500">
@@ -132,10 +137,8 @@ export default function Contact() {
         </div>
 
         {/* RIGHT SIDE — FORM */}
-        <form 
-          onSubmit={handleSubmit}
-          className="space-y-12 mt-6 lg:mt-0"
-        >
+        <form onSubmit={handleSubmit} className="space-y-12 mt-6 lg:mt-0">
+
           <InputGroup 
             label="What is your name?" 
             placeholder="John Doe"
@@ -160,6 +163,7 @@ export default function Contact() {
             label="Estimated Budget (optional)" 
             placeholder="$3,000 USD"
             name="budget"
+            showHelper={true}
           />
 
           <div className="pt-6">
