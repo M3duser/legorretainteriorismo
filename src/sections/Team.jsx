@@ -14,10 +14,13 @@ export default function Team() {
 
   // Local images (exact paths in your public folder)
   const localPhotos = {
-    Vanya: "/profile/VANYA.jpg",
-    Liliana: "/profile/LILIANA.jpg",
-    Erika: "/profile/ERIKA.jpg",
-    Evelyn: "/profile/EVE.jpg",
+    Vanya: "/profile/VANYA-2.png",
+    Liliana: "/profile/LILIANA-2.png",
+    Erika: "/profile/ERIKA-2.png",
+    Evelyn: "/profile/EVE-2.png",
+    Hannia: "/profile/HANNIA-2.png",
+    Jimena: "/profile/JIMENA-2.png",
+    Padilla: "/profile/PADILLA-2.png",
   };
 
   // High-quality fallback photos for those without image
@@ -29,13 +32,13 @@ export default function Team() {
 
   // Final team in correct order
   const team = [
-    { name: "Vanya", role: "Founder", quote: "Passionate about creating spaces that tell a story." },
-    { name: "Liliana", role: "Project Manager", quote: "Driven by structure, clarity, and good coffee." },
-    { name: "Erika", role: "Interior Designer", quote: "Lover of Scandinavian style, tea, and indoor plants." },
-    { name: "Evelyn", role: "Interior Designer", quote: "Inspired by travel, culture, and quiet cafés." },
-    { name: "Hannia", role: "Interior Designer", quote: "Obsessed with natural light, textures, and thoughtful design." },
-    { name: "Jimena", role: "Interior Designer", quote: "Architecture, music, and photography spark my creativity." },
-    { name: "Padilla", role: "Interior Designer", quote: "Focused on creating warm atmospheres and subtle details." },
+    { name: "Vanya", role: "Founder | Interior Designer", quote: "Lives for intentional design and the ritual of the perfect latte." },
+    { name: "Liliana", role: "Project Manager | Industrial Designer", quote: "Obsessed with classic structure, layered style, and quiet poetry." },
+    { name: "Erika", role: "Project Manager | Architect", quote: "Drawn to candlelit ambiance, romance, and lasting comfort." },
+    { name: "Evelyn", role: "Interior Designer", quote: "A deep love for rich textures, old-school charm, and slowing down." },
+    { name: "Hannia", role: "Industrial Designer", quote: "Fueled by a perfectly curated monochrome life." },
+    { name: "Jimena", role: "Interior Designer", quote: "Finds inspiration in manual crafts and the freedom of pure creativity." },
+    { name: "Jimena Padilla", role: "Interior Designer", quote: "Fascinated by smart solutions and the future of functional technology." },
   ];
 
   return (
